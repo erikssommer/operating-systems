@@ -1,2 +1,3 @@
 # Operativsystemer
-Arbeid med emnet Operativsystemer ved OsloMet
+
+Link til kompendium: https://www.cs.hioa.no/~haugerud/os/
