@@ -9,6 +9,7 @@ De to viktigste oppgavene til et operativsystem er:
 
 -	Å fordele ressursene en maskin til enhver tid har til rådighet, mellom ulike prosesser og brukere slik at disse ikke ødelegger for hverandre når de evt. ønsker å bruke samme ressurser. 
 
+Å lage en abstraksjon, dvs et grensesnitt, av hardware og administrere ressursbruken/fordelingen
 1.2 
 
 I figuren i forelesningsnotatene er det to feil i output på høyre side, hva er galt?
