@@ -94,6 +94,16 @@ s341870@studssh:~/tmp/etc$
 
 ```
 
+```Bash
+$ mkdir ~/tmp
+$ mkdir ~/tmp/etc
+$ mkdir ~/tmp/etc/bin
+$ touch ~/tmp/fil1
+$ touch ~/tmp/etc/fil2
+$ cp /etc/passwd ~/tmp
+```
+
+
 2.11
 ```Bash
 s341870@studssh:/etc$ cd ../..
@@ -120,7 +130,7 @@ s341870@studssh:~/mappe$ ls
 
 fil1.txt  fil2.java  fil3.sh  fil4.java
 
-s341870@studssh:~/mappe$ mv *.java ..
+s341870@studssh:~/mappe$ cp *.java ../
 
 s341870@studssh:~/mappe$ cd
 
@@ -167,18 +177,19 @@ uname -a
 
 s341870@studssh:~$
 ```
-Når man kjører skriptet ved å bruke ./ så spesifiseres det at det er en fil og hvor den ligger.
-Skriver man bare info.sh virker det som om det tolkes som en kommando
+Den første måten er avhengig av at mappen "." (den du står i) er med i $PATH.
+Den andre måten forteller eksplisitt hvilket program som skal kjøres, uavhengig av @PATH.
 
 
 2.16
 
 Top er en kommando som viser fortløpende prosesser som står og kjører. Den øverste og første delen viser en oversikt over totalverdiene. Den nederste delen viser en tabell med hvert individuelle kommando og info. Jeg vil si feltene med hvor mye minne som blir brukt og hvor mye cpu-kraft som blir brukt er de viktigste. Hvem som gjør hva, kan også være greit å vite. Ved å taste 1 får du opp alle de ulike cpu-ene.
 
+top er delt inn i to deler. Den ene delen viser systeminformasjon, mens den andre delen viser hovedsaklig prosesser. Hvilke interessante felt man velger er opp til en selv, men minne og cpu-bruk er vanligvis viktigst. Ved å taste 1 får man se detaljer for hver CPU.
+
 2.17 
 
 Når du taster "U" og legger inn eget brukernavn, får du en oversikt over prosesser som er tilknyttet din bruker. Dette kan være nyttig hvis du opplever problemer med noen av prosessene. 
-
 
 2.18
 
@@ -349,6 +360,10 @@ s341870@studssh:/$ cd ~
 Ved å bruke relativ path fra root.
 ```Bash
 s341870@studssh:/$ cd iu/cube/u0/s341870
+```
+
+```Bash
+cd $HOME
 ```
 
 3.9
