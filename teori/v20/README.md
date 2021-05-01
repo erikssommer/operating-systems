@@ -208,3 +208,33 @@ Det betyr at det på denne serveren er 8 (eller flere) uavhengige regne-enheter 
 avgjøre om disse 8, eller flere, kjernene er hyperthreading eller ikke, siden det ikke scheduleres mer enn en prosess
 per kjerne.
 
+### Oppgave 11
+
+Dockerfile som lager en container med default versjon av ubuntu og med apache2 installert, og som gjør slik at
+filen index.html legges i /var/www/html på containeren. Sørger også for at apache startes når containeren startes.
+```Dockerfile
+FROM ubuntu
+RUN apt-get -y update
+RUN apt-get -y install apache2
+COPY index.html /var/www/html
+CMD ["/usr/sbin/apachect1","-D","FOREGROUND"]
+```
+
+
+### Oppgave 12
+
+Docker-kommando som med utgangspunkt i dockerfilen i forrige oppgave bygger et docker-image med navn ubuntuA:
+
+```Bash
+docker build -t ubuntuA .
+```
+
+eller
+
+```Bash
+docker image build -t ubuntuA .
+```
+
+Det siste argumentet er PATH til der hvor Dockerfile ligger. Så hvis man bruker '.' i kommandoen må man stå i samme
+mappe som Dockerfile ligger. Men man kan også stå i en annen mappe om man angir PATH til der hvor Dockerfile ligger.
+
