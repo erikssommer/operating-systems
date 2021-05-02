@@ -220,7 +220,6 @@ COPY index.html /var/www/html
 CMD ["/usr/sbin/apachect1","-D","FOREGROUND"]
 ```
 
-
 ### Oppgave 12
 
 Docker-kommando som med utgangspunkt i dockerfilen i forrige oppgave bygger et docker-image med navn ubuntuA:
@@ -249,6 +248,17 @@ docker container run -p 5555:80 -d ubuntuA
 
 Filen blir inkludert i imaget når det bygges. Om man endrer filen i ettertid, vil den ikke endres i containere
 som er startet med dette image'et.
+
+### Oppgave 14
+
+Det går raskest å koipere fra L1 cache
+
+### Oppgave 15
+
+MMU
+
+0000|000000001000 => 010|000000001000 = 2^13 + 2^3 = 8200
+
 
 
 
