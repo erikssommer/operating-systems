@@ -301,6 +301,13 @@ Kjør: ./lagDelFilmer.sh inn.mp4 0:00:04 0:08:05 0:08:25 0:10:26 0:11:03 0:21:55
 
 ### Oppgave 22
 
+Den fundamentale forskjellen er at en Linux-kommando kun returnerer tekst mens en PowerShell-komnado returnerer
+et helt objekt med metoder og properties. Default ser vi bare tekst-resultatet, men om man sender output til en pipe
+eller trekker ut properties, vil man i PowerShell-tilfellet se forskjellen.
+
+### Oppgave 23
+
+Se /scripts/time3.ps1
 
 
 
