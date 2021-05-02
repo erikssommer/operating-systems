@@ -274,3 +274,15 @@ undermapper inkludert. Og til slutt skriver ut resultatet.
 
 ### Oppgave 23
 
+Betydningen av uttrykket random access er at det ikke er noen forskjell på tiden det skal ta å lese
+eller skrive ethvert byte i RAM. Dette vil vanligvis ikke være oppfylt da alle servere bruker cache, og bytes som
+ligger i cache er raskere å hente enn om man må helt ut i RAM for å hente en gitt byte. Et annet tilfelle er servere
+med numa-noder; for disse vil noen deler av RAM ha lenger aksesstid en andre for den enkelte CPU.
+
+### Oppgave 24
+
+Det vrituelle adresserommet deles opp i **pages**
+
+### Oppgave 25
+
+Elementet Paritets bit er ikke med i en Page Table Entry
