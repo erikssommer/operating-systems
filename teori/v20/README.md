@@ -277,6 +277,33 @@ Lager en tom fil med navn fil.txt
 
 Filendelsen .lin og .com er ikke en vanlige filendelser i Linux
 
+### Oppgave 19
+
+Se /script/time1.sh
+
+Kjør: ./time1.sh 01:16:40 01:16:50
+
+Utskrift: 10
+
+### Oppgave 20
+
+Se /script/time2.sh
+
+Kjør: ./time2.sh 01:16:40 01:16:50
+
+Utskrift: 00:00:10
+
+### Oppgave 21
+
+Se /script/lagDelFilmer.sh
+
+Kjør: ./lagDelFilmer.sh inn.mp4 0:00:04 0:08:05 0:08:25 0:10:26 0:11:03 0:21:55
+
+### Oppgave 22
+
+
+
+
 
 
 
