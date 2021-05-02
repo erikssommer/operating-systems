@@ -263,12 +263,19 @@ legges i adir og tilsvarende for b og c
 PowerShell ==> Linux
 
 Remove-item -> rm
+
 Get-Process -> ps
+
 Stop-Process -> kill
+
 Set-Location -> cd
+
 Copy-Item -> cp
+
 Get-Location -> pwd
+
 Move-Item -> mv
+
 Get-Content -> cat
 
 ### Oppgave 22
