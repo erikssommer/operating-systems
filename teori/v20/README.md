@@ -259,6 +259,25 @@ MMU
 
 0000|000000001000 => 010|000000001000 = 2^13 + 2^3 = 8200
 
+### Oppgave 16
+
+. (punktum) refererer til mappen du står i
+.. refererer til mappen over den du står i
+/ refererer til roten av filsystemet
+
+### Oppgave 17
+
+```Bash
+touch fil.txt
+```
+
+Lager en tom fil med navn fil.txt
+
+### Oppgave 18
+
+Filendelsen .lin og .com er ikke en vanlige filendelser i Linux
+
+
 
 
 
