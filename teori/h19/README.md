@@ -209,4 +209,46 @@ finnes ingen enkel løsning på dette. Peterson-algoritmen er en litt kompleks l
 Scriptene trenger hjelp fra OS for å serialiseres, eventuelt kan atomiske operasjoner benyttes, som tester og endrer en
 verdi uten at andre prosesser kan få aksess til verdien samtidig.
 
+### Oppgave 15
+
+.. refererer til mappen over den du står i 
+
+### Oppgave 16
+
+```Bash
+/usr/bin/diff
+```
+
+Er angitt med absolutt path fordi den starter med /
+
+### Oppgave 17
+
+Standard output fra programmet regn omdirigeres til filen res.txt ved ved:
+
+```Bash
+regn > res.txt
+```
+
+### Oppgave 18
+
+```Bash
+echo \*
+```
+
+skriver ut: *
+
+### Oppgave 19
+
+Forsøkene failer fordi:
+
+1. $prefixfase blir tolket som en annen og ny variabel og den er tom
+2. $(perfix)fase er et forsøk på å kjøre kommandoen 'prefix' og den finnes ikke
+3. Siste forsøk virker nesten, men skriver ut et mellomrom
+
+Tre måter å få det til på:
+
+1. echo ${prefix}fase
+2. echo "$prefix"fase
+3. echo $prefix"fase"
+
 
