@@ -179,11 +179,11 @@ while-løkken for, scriptet vil gå i en løkke så lenge filen eksisterer.
 Følgende skjer:
 
 1. Tallet 0 skrives til filen
-2. Script nr 1 starter, lock-filen finnes ikke og det går ikke inn i while-løkken. En tom lock-fil lages. Deretter
-leser den verdien 0 og øker den til 1 og begynner så å vente med sleep.
+2. Script nr 1 starter, lock-filen finnes ikke og det går ikke inn i while-løkken. En tom lock-fil lages. Deretter leser
+   den verdien 0 og øker den til 1 og begynner så å vente med sleep.
 3. Etter 1 sekund: Script nr 2 starter, men bir stående å loope i while-løkken siden lock-filen finnes.
 4. Etter 3 sekunder: Script nr 1 skriver ut verdien 1, fjerner lock-filen og avslutter. Dermed avslutter script 2
-while-løkken, leser inn verdien 1 fra filen og øker verdien til 2.
+   while-løkken, leser inn verdien 1 fra filen og øker verdien til 2.
 5. Etter 6 sekunder: Script nr 2 skriver ut verdien 2 og fjerner lock-filen.
 
 While-løkken med lås-filen lock sørger for at kun ett script slipper til av gangen i det kritiske avsnittet.
@@ -197,10 +197,10 @@ Følgende må ha skjedd:
 
 1. Det første scriptet kommer til while-løkken tester om lock-filen finnes med -f $lock og det gjør den ikke.
 2. Neste script gjør den samme sjekken før det første scriptet har laget en lock-fil, dermed oasserer begge script
-while-løkken og går samtidlig inn i kritisk avsnitt og begge leser inn verdien 0.
+   while-løkken og går samtidlig inn i kritisk avsnitt og begge leser inn verdien 0.
 3. Det første scriptet som blir ferdig med sleep skriver ut verdien 1 og sletter lock-filen.
 4. Det andre scriptet som blir ferdig med sleep skriver ut verdien 1 og sletter lock-filen. Men den er allerede slettet
-og feilmeldingen 'No such file or directory' skrives ut.
+   og feilmeldingen 'No such file or directory' skrives ut.
 5. Når teller skrives ut med cat vil verdien dermed være 1
 
 En slik kjøring kunne ha endt med at tallet ble 2 hvis det første scriptet hadde rukket å lage lock-filen før neste
@@ -211,7 +211,7 @@ verdi uten at andre prosesser kan få aksess til verdien samtidig.
 
 ### Oppgave 15
 
-.. refererer til mappen over den du står i 
+.. refererer til mappen over den du står i
 
 ### Oppgave 16
 
@@ -251,4 +251,26 @@ Tre måter å få det til på:
 2. echo "$prefix"fase
 3. echo $prefix"fase"
 
+### Oppgave 20
+
+Se /scripts/organiser.sh
+
+organiser.sh lager mapper med navn adir, bdir og cdir og så organiserer filene slik at alle filer som begynner på a
+legges i adir og tilsvarende for b og c
+
+### Oppgave 21
+
+PowerShell ==> Linux
+
+Remove-item -> rm Get-Process -> ps Stop-Process -> kill Set-Location -> cd Copy-Item -> cp Get-Location -> pwd
+Move-Item -> mv Get-Content -> cat
+
+### Oppgave 22
+
+Se /scripts/antallbytes.ps1
+
+PowerShell-script som regner ut det totale antall bytes for filer med fil-endelsen(extension) .ps1 på hele C:\,
+undermapper inkludert. Og til slutt skriver ut resultatet.
+
+### Oppgave 23
 
