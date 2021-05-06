@@ -56,3 +56,58 @@ Ber om bekreftelse først
 ```Bash
 rm -i fil2
 ```
+
+### Omdirigering
+
+Den store fleksibiliteten det gir å kunne dirigere datastrømmer til og fra filer og programmer har alltid vært
+en sentral og nyttig egenskap ved Linux.
+
+Omdirigerer stdout til fil.txt. Overskriver
+```Bash
+> fil.txt
+```
+
+Legger stdout etter siste linje i fil.txt
+```Bash
+>> fil.txt
+```
+
+Sender også stderr til fil.txt
+```Bash
+>& fil.txt
+```
+
+Sender stderr til err.txt
+```Bash
+2> err.txt
+```
+
+stderr sendes til et 'sort hull' og forsvinner
+```Bash
+2> /dev/null
+```
+
+stdout -> fil.txt stderr -> err.txt
+```Bash
+> fil.txt 2> err.txt
+```
+
+
+### Omdirigering til og fra kommandoer; pipes
+
+En pipe | er et data-rør som leder et programs stdout til et annet programs stdin
+
+Uten pipe:
+```Bash
+ps aux > fil
+more fil
+```
+Med pipe:
+```Bash
+ps aux | more
+```
+
+Dette gjør at man kan kombinere alle Linux-kommandoene på en rekke måter.
+
+Når man setter en pipe etter en kommando, er det bare stdout som sendes dit.
+Men ved hjelp av konstruksjonen |& sender man også stderr videre
