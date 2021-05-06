@@ -1,5 +1,5 @@
 #! /bin/bash
-fil=$$1
+fil=$1
 
 if [ -f "$fil" ]; then
   echo $fil er en fil
