@@ -37,3 +37,23 @@ Logisk OR
 ```Bash
 -o
 ```
+
+### Shell-programmering, oppsummering
+
+(+) Fint til enkelte oppgaver der Linux-kommandoer gjør jobben
+
+(+) Slipper å kompilere
+
+(+) Pipes, omdirigering: Kragtig verktøy
+
+(+) Bra til enkle systemscript
+
+(-) Dårlig programstruktur (variable-typer, parameter-overføring, klasser, etc.)
+
+(-) Dårlige feilmeldinger
+
+(-) Vanskelig å debugge
+
+(-) Kryptisk syntakst
+
+(-) Veldig langsomt sammenlignet med kopilert kode
