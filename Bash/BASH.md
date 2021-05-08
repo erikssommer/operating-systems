@@ -38,6 +38,55 @@ Logisk OR
 -o
 ```
 
+### Regulære uttrykk
+
+Matcher begynnelsen av strengen
+```Bash
+^
+```
+
+Matcher slutten av strengen
+```Bash
+$
+```
+
+Skiller alternativer
+```Bash
+|
+```
+
+Matcher alt untatt \n
+```Bash
+.
+```
+
+Neste tegn skal ikke tolkes (\$ matcher $)
+```Bash
+\
+```
+
+Grupperer
+```Bash
+()
+```
+
+#### Eks:
+
+ho på starten av strengen
+```Bash
+$line =~ ^ho
+```
+
+ho eller hi på slutten av strengen
+```Bash
+$line =~ ho$|hi$
+```
+
+Vilkårlig tegn fulgt av $
+```Bash
+$line =~ .\$
+```
+
 ### Shell-programmering, oppsummering
 
 (+) Fint til enkelte oppgaver der Linux-kommandoer gjør jobben
