@@ -196,3 +196,80 @@ echo Linker: $ltot
 Hvor den spesielle konstruksjonen <( fungerer som en slags baklengs pipe. Det kalles process substitution og får en
 prosess sin output til å opptre som et filnavn. ( Om man pipe’t find-kommandoen inn til while, ville det samme skjedd,
 bortsett fra at variablene da ikke ville bli bevart etter løkken.)
+
+## Prosesser
+
+### Oppgave 15
+
+Et operativsystem får det til å se ut som om mange prosesser kan kjøre samtidig ved å dele opp tiden i små biter og
+la hver prosess som kjører få en bit CPU-tid (størrelsesorden et hundredels sekund) av gangen i en Round Robin kø.
+Prosesser som trenger rask respons (som teksteditorer og web-browsere) vil gjennom tastatur og muse-interrupts sende
+beskjed, slik at de raskt blir behandlet. En hardware timer sender jevnlig et interrupt-signal som gjør at OS kan ta
+over kontrollen over CPUen og umiddelbart sørge for å gi respons til prosesser som krever rask respons. Dermed unngås
+det også at vanlige brukerprosesser tar over styringen selvom de kjører instruksjoner direkte på CPUen.
+
+### Oppgave 16
+
+Et systemkall utføres når en prosess i user-mode ber OS-kjernen om en tjeneste. Det kan være tjenester som å skrive til
+disk eller å opprette en ny prosess. Alle operasjoner som er kontrollert av OS-kjernen som dermed i høyeste grad er 
+involvert. Totalt sett utgjør alle systemkall et API mot OS-kjernen som en brukerprosess kan benytte seg av. Hvis
+det å utføre et systemkall tar litt tid, som for eksempel å lese en fil fra disken, vil prosessen bli satt på vent til
+systemkallet er ferdig. Dette er såkalte blokkenede systemkall. I eksempelet med vaffel-prosessen var det å hente melk
+et systemkall som tok relativt lang tid, dermed ble vaffel-prosessen satt på vent og forelesnings-prosessen tok over.
+Knusing av egg var derimot et ikke-blokkerende systemkall og ble utført med en gang. I begge tilfeller var det
+OS-kjernen som utførte operasjonen som bruker-prosessen (vaffellaging) ba om.
+
+### Oppgave 17
+
+Ja, etter en 'context switch' starter prosessen opp igjen på en annen CPU istedet for den den samme. Registerverdier
+og annet legges da over på den nye CPUen istedet for den gamle. Dette skjer ofte hvis det er flere CPU-intensive
+prosesser enn CPUer; da bytter prosessene på å kjøre og blir ikke startet opp på damme CPU hver gang (men pga cache,
+velges om mulig samme CPU når en prosess skal startes på nytt). Sidene i RAM må ikke flyttes, RAM deles av alle CPUene
+i systemet og sidene blir liggende på samme sted.
+
+### Oppgave 18
+
+En tråd er den sammenhengende rekken av hendelser/instruksjoner som utføres når et program kjøres. I en prosess kan 
+flere slike rekker av instruksjoner utføres samtidig, de kan være på forskejllige steder i samme felles kode og endre
+på både egne og felles variabler. Har man flere uavhengige CPU-cores kan trådene utføres samtidig innenfor den samme
+prosessen; med kun en core bytter de på å kjøre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
