@@ -234,6 +234,47 @@ flere slike rekker av instruksjoner utføres samtidig, de kan være på forskejl
 på både egne og felles variabler. Har man flere uavhengige CPU-cores kan trådene utføres samtidig innenfor den samme
 prosessen; med kun en core bytter de på å kjøre
 
+## PowerShell
+
+### Oppgave 19
+
+```PowerShell
+PS C:\Users\os> $now = Get-Date                     # Legger nåværende dag og tid i variabelen $now
+PS C:\Users\os> $then = Get-Date "20 Januar 2019"   # Legger oppgitt tidspunkt i $then
+PS C:\Users\os> $then                               # Skriver ut dette tidspunktet (tilsvarer echo $then)
+søndag 20. januar 2019 00.00.00
+PS C:\Users\os> $then -lt $now                      # Tester om $then er mindre enn $now og
+True                                                # Testen er sann siden $then skjedde tidigere enn $now
+```
+
+### Oppgave 20
+
+Gir hvilket årstall filen fil.txt ble laget
+```Powershell
+(ls fil.txt).CreationTime.Year
+```
+
+### Oppgave 21
+
+PowerShell kommando som viser alle filer og mapper under C:\User\os som sist gang ble skrevet til i
+løpet av 20 januar 2019
+```PowerShell
+ls -r C:\Users\os | Where-Object {$_.LastWriteTime -gt (Get-Date "20 januar 2019") -and $_.LastWriteTime -lt (Get-Date "21 januar 2019")}
+```
+
+### Oppgave 22
+
+PowerShell-kommandoen returnerer et helt objekt med properties og en av disse er LastAccessTime, dermed kan man også
+få ut dette tidspunktet med kommandoen:
+
+```PowerShell
+(ls fil.txt).LastAccessTime
+```
+
+Linux-kommandoen gir kun tekststrengen med datoen som vist over.
+
+
+
 
 
 
