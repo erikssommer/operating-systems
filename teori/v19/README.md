@@ -201,8 +201,8 @@ bortsett fra at variablene da ikke ville bli bevart etter løkken.)
 
 ### Oppgave 15
 
-Et operativsystem får det til å se ut som om mange prosesser kan kjøre samtidig ved å dele opp tiden i små biter og
-la hver prosess som kjører få en bit CPU-tid (størrelsesorden et hundredels sekund) av gangen i en Round Robin kø.
+Et operativsystem får det til å se ut som om mange prosesser kan kjøre samtidig ved å dele opp tiden i små biter og la
+hver prosess som kjører få en bit CPU-tid (størrelsesorden et hundredels sekund) av gangen i en Round Robin kø.
 Prosesser som trenger rask respons (som teksteditorer og web-browsere) vil gjennom tastatur og muse-interrupts sende
 beskjed, slik at de raskt blir behandlet. En hardware timer sender jevnlig et interrupt-signal som gjør at OS kan ta
 over kontrollen over CPUen og umiddelbart sørge for å gi respons til prosesser som krever rask respons. Dermed unngås
@@ -211,9 +211,9 @@ det også at vanlige brukerprosesser tar over styringen selvom de kjører instru
 ### Oppgave 16
 
 Et systemkall utføres når en prosess i user-mode ber OS-kjernen om en tjeneste. Det kan være tjenester som å skrive til
-disk eller å opprette en ny prosess. Alle operasjoner som er kontrollert av OS-kjernen som dermed i høyeste grad er 
-involvert. Totalt sett utgjør alle systemkall et API mot OS-kjernen som en brukerprosess kan benytte seg av. Hvis
-det å utføre et systemkall tar litt tid, som for eksempel å lese en fil fra disken, vil prosessen bli satt på vent til
+disk eller å opprette en ny prosess. Alle operasjoner som er kontrollert av OS-kjernen som dermed i høyeste grad er
+involvert. Totalt sett utgjør alle systemkall et API mot OS-kjernen som en brukerprosess kan benytte seg av. Hvis det å
+utføre et systemkall tar litt tid, som for eksempel å lese en fil fra disken, vil prosessen bli satt på vent til
 systemkallet er ferdig. Dette er såkalte blokkenede systemkall. I eksempelet med vaffel-prosessen var det å hente melk
 et systemkall som tok relativt lang tid, dermed ble vaffel-prosessen satt på vent og forelesnings-prosessen tok over.
 Knusing av egg var derimot et ikke-blokkerende systemkall og ble utført med en gang. I begge tilfeller var det
@@ -221,17 +221,17 @@ OS-kjernen som utførte operasjonen som bruker-prosessen (vaffellaging) ba om.
 
 ### Oppgave 17
 
-Ja, etter en 'context switch' starter prosessen opp igjen på en annen CPU istedet for den den samme. Registerverdier
-og annet legges da over på den nye CPUen istedet for den gamle. Dette skjer ofte hvis det er flere CPU-intensive
-prosesser enn CPUer; da bytter prosessene på å kjøre og blir ikke startet opp på damme CPU hver gang (men pga cache,
-velges om mulig samme CPU når en prosess skal startes på nytt). Sidene i RAM må ikke flyttes, RAM deles av alle CPUene
-i systemet og sidene blir liggende på samme sted.
+Ja, etter en 'context switch' starter prosessen opp igjen på en annen CPU istedet for den den samme. Registerverdier og
+annet legges da over på den nye CPUen istedet for den gamle. Dette skjer ofte hvis det er flere CPU-intensive prosesser
+enn CPUer; da bytter prosessene på å kjøre og blir ikke startet opp på damme CPU hver gang (men pga cache, velges om
+mulig samme CPU når en prosess skal startes på nytt). Sidene i RAM må ikke flyttes, RAM deles av alle CPUene i systemet
+og sidene blir liggende på samme sted.
 
 ### Oppgave 18
 
-En tråd er den sammenhengende rekken av hendelser/instruksjoner som utføres når et program kjøres. I en prosess kan 
-flere slike rekker av instruksjoner utføres samtidig, de kan være på forskejllige steder i samme felles kode og endre
-på både egne og felles variabler. Har man flere uavhengige CPU-cores kan trådene utføres samtidig innenfor den samme
+En tråd er den sammenhengende rekken av hendelser/instruksjoner som utføres når et program kjøres. I en prosess kan
+flere slike rekker av instruksjoner utføres samtidig, de kan være på forskejllige steder i samme felles kode og endre på
+både egne og felles variabler. Har man flere uavhengige CPU-cores kan trådene utføres samtidig innenfor den samme
 prosessen; med kun en core bytter de på å kjøre
 
 ## PowerShell
@@ -250,22 +250,24 @@ True                                                # Testen er sann siden $then
 ### Oppgave 20
 
 Gir hvilket årstall filen fil.txt ble laget
+
 ```Powershell
 (ls fil.txt).CreationTime.Year
 ```
 
 ### Oppgave 21
 
-PowerShell kommando som viser alle filer og mapper under C:\User\os som sist gang ble skrevet til i
-løpet av 20 januar 2019
+PowerShell kommando som viser alle filer og mapper under C:\User\os som sist gang ble skrevet til i løpet av 20 januar
+2019
+
 ```PowerShell
-ls -r C:\Users\os | Where-Object {$_.LastWriteTime -gt (Get-Date "20 januar 2019") -and $_.LastWriteTime -lt (Get-Date "21 januar 2019")}
+ls -r C:\Users\os | Where-Object { $_.LastWriteTime -gt (Get-Date "20 januar 2019") -and $_.LastWriteTime -lt (Get-Date "21 januar 2019") }
 ```
 
 ### Oppgave 22
 
-PowerShell-kommandoen returnerer et helt objekt med properties og en av disse er LastAccessTime, dermed kan man også
-få ut dette tidspunktet med kommandoen:
+PowerShell-kommandoen returnerer et helt objekt med properties og en av disse er LastAccessTime, dermed kan man også få
+ut dette tidspunktet med kommandoen:
 
 ```PowerShell
 (ls fil.txt).LastAccessTime
@@ -273,8 +275,52 @@ få ut dette tidspunktet med kommandoen:
 
 Linux-kommandoen gir kun tekststrengen med datoen som vist over.
 
+## Plattformavhengighet
 
+### Oppgave 23
 
+Et c-program kompilert på et Ubuntu 16.04 Linux operativsystem og Intel-prosessor kan kopieres over og kjøres på Ubuntu
+16.04 med AMD-prosessor. Kun et Linux-OS kan kjøre denne koden; både AMD og Itel er x86-basert).
+
+### Oppgave 24
+
+Ja, dette vil vike fordi class-koden kjøres i en JVM (Java Virtual Machine) som er kompilert for hver av platformene og
+class-koden kjøres og tolkes da på samme måte. Men svaret vil avhenge av at de to JVM'ene har samme hovedversjon, ikke
+alle hovedversjoner av JVM er kompatible med hverandre.
+
+## Internminne
+
+### Oppgave 25
+
+```C
+#include <stdio.h>
+
+int array[40000][40000];
+int main(){
+    int a,b;
+    for(a = 0;a < 40000;a++){
+        for(b = 0;b < 40000;b++){
+            array[a][b] = 5;
+        }
+    }
+}
+```
+
+4 byte * 40_000 * 40_000 / 4_000 byte = 4 * 40_000 * 10 = 1_600_000. Det eksakte tallet, som det ikke blir spurt etter,
+er 1_562_500, og man kan se at det er ca en minor fault pr side. En minor page fault vil skje når det ikke er laget en
+entry for den i MMU og det vil lagres en for hver side som er med i programmet.
+
+### Oppgave 26
+
+Den store forskjellen skyldes at cache utnyttes mye bedre i det første tilfellet. Dette igjen skyldes hvordan et array
+er lagret i RAM. array[0][0], array[0][1], array[0][2], etc ligger etterhverandre i minnet. Når variabelen b endres i
+den indre løkken, vil derfor sammenhengende deler av RAM skrives til fortløpende. Dermed blir bruken av cahce veldig
+effektiv. Når man bytter om på [a][b] til [b][a], vil det skrives til helt forskjellige steder i RAM hver gang (4*40
+000 bytes fra hverandre) og cahce-bruken vil bli veldig ineffektiv. Output fra perf viser at det er veldig mange flere
+cache-referanser og misses for den andre versjonen, spesielt for data og TLB, slik at det i siste linje blir 2500 Mega
+bus-cycles i motsetning til 200 Mega bus-cycles (men minor og major page-faults er det samme, så det skyldes ikke
+paging). Skriving til RAM står trolig for det meste av tidsbruken og det andre programmet bruker da 12.5 ganger så
+lang tid.
 
 
 
