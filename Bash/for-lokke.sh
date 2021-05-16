@@ -12,3 +12,13 @@ do
   echo "$i"
 done
 
+teller=0
+
+while (( teller < 10))
+do
+   (( teller++ ))
+   echo $teller
+done
+
+echo Ferdig!
+
