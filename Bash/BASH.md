@@ -1,6 +1,7 @@
 # Bash
 
 ### Filtester
+
 ```Bash
 -L fil	fil er en link
 -r fil	fil er lesbar
@@ -24,16 +25,19 @@ t1 -o t2	Logisk eller - sann hvis t1 ELLER t2 er sanne
 ### Logiske operatorer
 
 Logisk NOT
+
 ```Bash
 !
 ```
 
 Logisk AND
+
 ```Bash
 -a
 ```
 
 Logisk OR
+
 ```Bash
 -o
 ```
@@ -41,31 +45,37 @@ Logisk OR
 ### Regulære uttrykk
 
 Matcher begynnelsen av strengen
+
 ```Bash
 ^
 ```
 
 Matcher slutten av strengen
+
 ```Bash
 $
 ```
 
 Skiller alternativer
+
 ```Bash
 |
 ```
 
 Matcher alt untatt \n
+
 ```Bash
 .
 ```
 
 Neste tegn skal ikke tolkes (\$ matcher $)
+
 ```Bash
 \
 ```
 
 Grupperer
+
 ```Bash
 ()
 ```
@@ -73,16 +83,19 @@ Grupperer
 #### Eks:
 
 ho på starten av strengen
+
 ```Bash
 $line =~ ^ho
 ```
 
 ho eller hi på slutten av strengen
+
 ```Bash
 $line =~ ho$|hi$
 ```
 
 Vilkårlig tegn fulgt av $
+
 ```Bash
 $line =~ .\$
 ```

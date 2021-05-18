@@ -315,9 +315,9 @@ entry for den i MMU og det vil lagres en for hver side som er med i programmet.
 Den store forskjellen skyldes at cache utnyttes mye bedre i det første tilfellet. Dette igjen skyldes hvordan et array
 er lagret i RAM. array[0][0], array[0][1], array[0][2], etc ligger etterhverandre i minnet. Når variabelen b endres i
 den indre løkken, vil derfor sammenhengende deler av RAM skrives til fortløpende. Dermed blir bruken av cahce veldig
-effektiv. Når man bytter om på [a][b] til [b][a], vil det skrives til helt forskjellige steder i RAM hver gang (4*40
-000 bytes fra hverandre) og cahce-bruken vil bli veldig ineffektiv. Output fra perf viser at det er veldig mange flere
+effektiv. Når man bytter om på [a][b] til [b][a], vil det skrives til helt forskjellige steder i RAM hver gang (4*40 000
+bytes fra hverandre) og cahce-bruken vil bli veldig ineffektiv. Output fra perf viser at det er veldig mange flere
 cache-referanser og misses for den andre versjonen, spesielt for data og TLB, slik at det i siste linje blir 2500 Mega
 bus-cycles i motsetning til 200 Mega bus-cycles (men minor og major page-faults er det samme, så det skyldes ikke
-paging). Skriving til RAM står trolig for det meste av tidsbruken og det andre programmet bruker da 12.5 ganger så
-lang tid.
+paging). Skriving til RAM står trolig for det meste av tidsbruken og det andre programmet bruker da 12.5 ganger så lang
+tid.

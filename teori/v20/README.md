@@ -210,8 +210,9 @@ per kjerne.
 
 ### Oppgave 11
 
-Dockerfile som lager en container med default versjon av ubuntu og med apache2 installert, og som gjør slik at
-filen index.html legges i /var/www/html på containeren. Sørger også for at apache startes når containeren startes.
+Dockerfile som lager en container med default versjon av ubuntu og med apache2 installert, og som gjør slik at filen
+index.html legges i /var/www/html på containeren. Sørger også for at apache startes når containeren startes.
+
 ```Dockerfile
 FROM ubuntu
 RUN apt-get -y update
@@ -239,15 +240,15 @@ mappe som Dockerfile ligger. Men man kan også stå i en annen mappe om man angi
 
 ### Oppgave 13
 
-Docker-kommando som bruker ubuntuA-imaget du bygde i forrige oppgave til å starte i bakgrunnen en container som
-svarer på web-tilkoblinger på port 5555 og viser siden index.html:
+Docker-kommando som bruker ubuntuA-imaget du bygde i forrige oppgave til å starte i bakgrunnen en container som svarer
+på web-tilkoblinger på port 5555 og viser siden index.html:
 
 ```Bash
 docker container run -p 5555:80 -d ubuntuA
 ```
 
-Filen blir inkludert i imaget når det bygges. Om man endrer filen i ettertid, vil den ikke endres i containere
-som er startet med dette image'et.
+Filen blir inkludert i imaget når det bygges. Om man endrer filen i ettertid, vil den ikke endres i containere som er
+startet med dette image'et.
 
 ### Oppgave 14
 
@@ -261,9 +262,8 @@ MMU
 
 ### Oppgave 16
 
-. (punktum) refererer til mappen du står i
-.. refererer til mappen over den du står i
-/ refererer til roten av filsystemet
+. (punktum) refererer til mappen du står i .. refererer til mappen over den du står i / refererer til roten av
+filsystemet
 
 ### Oppgave 17
 
@@ -301,9 +301,9 @@ Kjør: ./lagDelFilmer.sh inn.mp4 0:00:04 0:08:05 0:08:25 0:10:26 0:11:03 0:21:55
 
 ### Oppgave 22
 
-Den fundamentale forskjellen er at en Linux-kommando kun returnerer tekst mens en PowerShell-komnado returnerer
-et helt objekt med metoder og properties. Default ser vi bare tekst-resultatet, men om man sender output til en pipe
-eller trekker ut properties, vil man i PowerShell-tilfellet se forskjellen.
+Den fundamentale forskjellen er at en Linux-kommando kun returnerer tekst mens en PowerShell-komnado returnerer et helt
+objekt med metoder og properties. Default ser vi bare tekst-resultatet, men om man sender output til en pipe eller
+trekker ut properties, vil man i PowerShell-tilfellet se forskjellen.
 
 ### Oppgave 23
 

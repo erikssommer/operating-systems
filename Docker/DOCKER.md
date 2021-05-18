@@ -8,51 +8,61 @@
 * Kan brukes til å sette opp (orkestrere) store komplekse systemer med Kubernetes (K8s)
 
 Liste alle kjørende containere
+
 ```Bash
 docker container ps
 ```
 
 Liste alle containere
+
 ```Bash
 docker container ps -a
 ```
 
 Stoppe en container
+
 ```Bash
 docker container stop 10265b152acb
 ```
 
 Fjerne en container med hash
+
 ```Bash
 docker container rm 10265b152acb
 ```
 
 Fjerne en container med containernavn
+
 ```Bash
 docker container rm containernavn
 ```
 
 List alle locale images
+
 ```Bash
 docker images
 ```
 
 Kjører og laster ned ubuntu hvis ikke gjort før og åpner i nytt shell i interactive mode (-it)
+
 ```Bash
 docker container run -it ubuntu bash
 ```
 
 Lage image ved å bruke mappen sin Dockerfile
+
 ```Bash
 docker build -t friendlyname .
 ```
 
 Kjører nginx på port 7979 og videreført til port 80 til cotaineren
+
 ```Bash
 docker container run -p 7979:80 nginx
 ```
 
 Kjør "freindlyname" og mappe port 4000 til 80
+
 ```Bash
 docker container run -p 4000:80 friendlyname
 ```

@@ -1,4 +1,5 @@
 Oppg 5.1
+
 ```Bash
 s341870@studssh:~/obliger/oblig2$ cat testchell.sh
 #! /bin/bash
@@ -12,7 +13,9 @@ fi
 s341870@studssh:~/obliger/oblig2$ ./testchell.sh
 /bin/bash
 ```
+
 Oppg 5.2
+
 ```Bash
 #! /bin/bash
 if [ -e ~/www ]
@@ -35,7 +38,9 @@ chmod 755 ~/www/bilder
 echo "Opprettet ~/www/bilder og satt rettigheter til 755"
 Fi
 ```
+
 Oppg 5.3
+
 ```Bash
 #! /bin/bash
 
@@ -53,7 +58,9 @@ Antall mapper: 3
 Antall linker: 0
 
 ```
+
 Oppg 5.6
+
 ```Bash
 #! /bin/bash
 
@@ -98,6 +105,7 @@ done
 Oppg 5.10
 
 Oppg 5.13
+
 ```Bash
 s341870@studssh:~/obliger/oblig2$ nano main.c
 s341870@studssh:~/obliger/oblig2$ nano enlinje.c
@@ -106,22 +114,25 @@ s341870@studssh:~/obliger/oblig2$ ./a.out
 Kaller enlinje()...
 Svar = 42
 ```
+
 Kodekjøringen gir svaret 42 da man må med flytting og add på denne måten:
 10 (%rbp) -> %eax  
-10 (%eax) + 32 (%rbp) -> %rbp
-42 (%rbp) -> 42 (%eax)
+10 (%eax) + 32 (%rbp) -> %rbp 42 (%rbp) -> 42 (%eax)
 
 Forklaring på assembly-kode fra forelesning:
-mov memvar, %rbx   #flytter memvar (verdi 10) inn i register rbx
-add %rbx, svar           #adderer verdien memvar, som nå er lagret i %rbx, med svar (verdi 32) som ligger i minnet
-mov svar, %rax         # legger den nye svar verdien (42) i %rax, klar til å returneres.
-
+mov memvar, %rbx #flytter memvar (verdi 10) inn i register rbx add %rbx, svar #adderer verdien memvar, som nå er lagret
+i %rbx, med svar (verdi 32) som ligger i minnet mov svar, %rax # legger den nye svar verdien (42) i %rax, klar til å
+returneres.
 
 Oppg 5.14
 
-Ved å kompilere høynivåkoden får vi 41 linjer kode totalt. Forskjellen på å bruke int og “long long” er at ved “long long” velger kompilatoren å bruke 64-bit’s registere som feks. %rax. Disse registerne starter på “r” og ikke “e” som 32-bit registre. Det blir også satt av mer minneplass, 8 byte. Assembly koden bruker også andre instruksjoner som slutter på “q” for quad i stedet for “l” for long. Feks: “movq”.
+Ved å kompilere høynivåkoden får vi 41 linjer kode totalt. Forskjellen på å bruke int og “long long” er at ved “long
+long” velger kompilatoren å bruke 64-bit’s registere som feks. %rax. Disse registerne starter på “r” og ikke “e” som
+32-bit registre. Det blir også satt av mer minneplass, 8 byte. Assembly koden bruker også andre instruksjoner som
+slutter på “q” for quad i stedet for “l” for long. Feks: “movq”.
 
 Oppg 6.1
+
 ```Bash
 s341870@studssh:~/obliger/oblig2$ cat passordhash.sh
 #! /bin/bash
@@ -139,17 +150,16 @@ break
 fi
 done
 ```
-Oppg 6.3
 
+Oppg 6.3
 
 (Hadde ingen filer som ble endret på den 30. Jan 2019, så valgte 2. mars 2021).
 
-
 Oppg 6.4
+
 ```Bash
 s341870@studssh:~/obliger/oblig2$ sed "s/stud.hioa.no/oslomet.no/" fil.txt > nyFil.txt
 ```
-
 
 Oppg 6.6
 
@@ -168,6 +178,7 @@ s341870@studssh:~$ ls -l /etc | sort -k 5 -nr | head -n 10
 ```
 
 Oppg 6.7
+
 ```Bash
 s341870@studssh:~/obliger/oblig2$ cat shellfalse.sh
 #! /bin/bash
@@ -190,54 +201,62 @@ done < /etc/passwd
 ```
 
 Oppg 6.12
+
 ```Bash
 s338850@studssh:~$ ./regn > res.txt 2> err.txt &
 ```
-Feilmeldingen ble skrevet til err.txt, men feilmeldingen er den første som blir skrevet. Jeg fikk skrevet den første linjen "regner …" til res.txt, men resultatet kom ikke. så jeg vil anta at den avbrytes når jeg logger ut.
-Alt.: s341870@studssh:~$ ./regn 2> err.txt > res.txt
 
-
+Feilmeldingen ble skrevet til err.txt, men feilmeldingen er den første som blir skrevet. Jeg fikk skrevet den første
+linjen "regner …" til res.txt, men resultatet kom ikke. så jeg vil anta at den avbrytes når jeg logger ut. Alt.:
+s341870@studssh:~$ ./regn 2> err.txt > res.txt
 
 Oppg 6.13
 
-Ser at tiden det tar for prosessen er ferdig er 1 min og 6 sek med CPU på 99,8%.
-Prøvde på ulike måter å legge inn tidsbruk i err.txt-fil uten hell.
-
+Ser at tiden det tar for prosessen er ferdig er 1 min og 6 sek med CPU på 99,8%. Prøvde på ulike måter å legge inn
+tidsbruk i err.txt-fil uten hell.
 
 Oppg 6.15
 
-a.out får 100% av CPU
-Studssh har 4 prosessorer.
-Prosessene fordeles mellom CPU’ene 1, 2 og 3, mens det ser ut som CPU 0 kjører de mest CPU-krevende root-prosessene, men det er ikke sikkert at det gjelder for alle. To av CPU’ene må da til enhver tid bytte på å jobbe med to av a.out-prosessene.
-Etter endring av run.c til å vare i ca 10 sek vil 5 slike prosesser fordelt på 4 CPU’er ta ca 12,5 sek pr prosess. (10 x 5 / 4 = 12,5).
+a.out får 100% av CPU Studssh har 4 prosessorer. Prosessene fordeles mellom CPU’ene 1, 2 og 3, mens det ser ut som CPU 0
+kjører de mest CPU-krevende root-prosessene, men det er ikke sikkert at det gjelder for alle. To av CPU’ene må da til
+enhver tid bytte på å jobbe med to av a.out-prosessene. Etter endring av run.c til å vare i ca 10 sek vil 5 slike
+prosesser fordelt på 4 CPU’er ta ca 12,5 sek pr prosess. (10 x 5 / 4 = 12,5).
 
 Oppg 6.16
 
-Når vi kjører tre prosesser, får de ca 67% CPU i gjennomsnitt. Det vil si at vi har 2 CPU'er disse prosessene blir fordelt på.
+Når vi kjører tre prosesser, får de ca 67% CPU i gjennomsnitt. Det vil si at vi har 2 CPU'er disse prosessene blir
+fordelt på.
 
-Ved å trykke 1 i top, ser det ut til at vi har tilgang på 20 CPU'er, men siden prosenten er beskrevet som ovenfor er det nok ikke slik av VM'en har tilgang til alle disse.
-Når vi legger til "Last used CPU"-kolonnen i top, ser det ut som om hver enkelt prosess jobber mest mulig på samme CPU hele tiden, men det skifter litt mot slutten. På studssh så skifter prosessene CPU gjennom hele prosessen.  
-Én a.out-prosess bruker ca 35sek med 100% CPU. Ettersom 3 prosesser har hver sin CPU, men som jobber på kun ca 67%, vil hvert av prosessene ta ca 52,2 sek.
+Ved å trykke 1 i top, ser det ut til at vi har tilgang på 20 CPU'er, men siden prosenten er beskrevet som ovenfor er det
+nok ikke slik av VM'en har tilgang til alle disse. Når vi legger til "Last used CPU"-kolonnen i top, ser det ut som om
+hver enkelt prosess jobber mest mulig på samme CPU hele tiden, men det skifter litt mot slutten. På studssh så skifter
+prosessene CPU gjennom hele prosessen.  
+Én a.out-prosess bruker ca 35sek med 100% CPU. Ettersom 3 prosesser har hver sin CPU, men som jobber på kun ca 67%, vil
+hvert av prosessene ta ca 52,2 sek.
 
 Oppg 7.1
 
 For å opprette ny bruker:
+
 ```Bash
 group28@os28:~$ sudo adduser s341870
 ```
 
 Kommando man bruke for å se hvilke grupper man tilhører:
+
 ```Bash
 s341870@os28:~$ groups s341870
 s341870 : s341870 sudo
 ```
 
 For å gi admintilgang:
+
 ```Bash
 group28@os28:~$ usermod -aG sudo s341870
 ```
 
 Da får du tilgang:
+
 ```Bash
 s341870@os28:~$ sudo su
 [sudo] password for s341870:
@@ -250,19 +269,21 @@ Rettighetene til sudo gruppen er spesifisert i /etc/sudoers slik:
 
 %sudo ALL=(ALL:ALL) ALL
 
-
 Oppg 7.4
 
 Skjermbilde av gruppens webserver:
 
 Oppg 7.5
+
 ```Bash
 group28@os28:~$ screen -d -m -S skjerm
 group28@os28:~$ screen -x skjerm
 ```
+
 Skjermbilde av deling:
 
 Oppg 7.6
+
 ```Bash
 s341870@studssh:~$ cd .ssh
 s341870@studssh:~/.ssh$ ssh-keygen
@@ -298,7 +319,9 @@ echo "4. unziped file on destination"
 ssh s341870@os28.vlab.cs.hioa.no -t "rm ~/dir.tgz"
 echo "5. removed temp file on destination"
 ```
+
 Så kjører vi scriptet
+
 ```Bash
 s341870@studssh:~$ ./pakksakene.bash
 1. packed /tmp/dir into dir.tgz
@@ -312,6 +335,7 @@ s341870@studssh:~$ ./pakksakene.bash
 ```
 
 Oppg 7.7
+
 ```Bash
 s338850@studssh:~$ cat backupgroup28.sh
 #! /bin/bash
@@ -327,9 +351,12 @@ no crontab for s338850 - using an empty one
 
 crontab: installing new crontab
 ```
-Hvis jeg ikke har med --delete som option til rsync, så vil ikke de filene jeg sletter i /home/group28/ registreres med rsync
+
+Hvis jeg ikke har med --delete som option til rsync, så vil ikke de filene jeg sletter i /home/group28/ registreres med
+rsync
 
 Oppg 7.8
+
 ```Bash
 s341885@studssh:~$ cat backup.sh
 #! /bin/bash
@@ -338,15 +365,18 @@ rsync --delete -a group28@os28.vlab.cs.hioa.no:/home/group28 ~/home
 rsync --delete -a root@os28.vlab.cs.hioa.no:/etc ~/home
 echo “Backup tatt av /home/group28/ og /etc $(date)” >> ~/sync.log
 ```
+
 Oppg 7.10
 
 Prøver først å kjøre programmet alene, da tar prosessen ca 10 sek og 100% CPU:
+
 ```Bash
 s338850@os28:~$ time ./a.out
 Real:10.023 User:10.023 Sys:0.000 100.00%
 ```
 
 Så to prosesser samtidig, da tar prosessen fortsatt ca 10 sek. og 100% CPU:
+
 ```Bash
 s338850@os28:~$ time ./a.out&
 [1] 393572
@@ -357,6 +387,7 @@ Real:10.003 User:10.003 Sys:0.000 100.00%
 ```
 
 Ved kjøring av 4 prosesser samtidig, dobles tiden til ca 20 sek og CPU senkes til ca 50%:
+
 ```Bash
 s338850@os28:~$ for i in {1..4}; do time ./a.out& done
 Real:19.926 User:10.040 Sys:0.000 50.38%
@@ -364,11 +395,11 @@ Real:19.950 User:10.036 Sys:0.004 50.32%
 Real:20.055 User:10.034 Sys:0.004 50.05%
 Real:20.094 User:10.036 Sys:0.000 49.94%
 ```
-Dette kan tyde på at
-at VM'en har tilgang til én CPU  og at det er to tråder i den.
-Oppg 7.11
+
+Dette kan tyde på at at VM'en har tilgang til én CPU og at det er to tråder i den. Oppg 7.11
 
 Kommandoen under gir en liste med threadsiblings på Linux VM.
+
 ```Bash
 s338850@os28:~$ grep "" /sys/devices/system/cpu/cpu*/topology/thread_siblings_list
 /sys/devices/system/cpu/cpu0/topology/thread_siblings_list:0,48
@@ -378,7 +409,10 @@ s338850@os28:~$ grep "" /sys/devices/system/cpu/cpu*/topology/thread_siblings_li
 .
 .
 ```
-Sjekker under at vi kan kjøre to prosesser på thread siblings-par 0, 48. Det går fint, og tiden hver prosess bruker er den samme som den skulle kjørt alene på en CPU.
+
+Sjekker under at vi kan kjøre to prosesser på thread siblings-par 0, 48. Det går fint, og tiden hver prosess bruker er
+den samme som den skulle kjørt alene på en CPU.
+
 ```Bash
 s338850@os28:~$ for i in 0 48; do time taskset -c $i ./a.out& done              
 [1] 393763
@@ -388,6 +422,7 @@ Real:10.301 User:10.298 Sys:0.000 99.96%
 ```
 
 Oppg 7.12
+
 ```Bash
 s338850@os28:~$ for i in {1..2}; do time taskset -c 0 ./a.out& done
 [1] 393747
@@ -397,4 +432,5 @@ Real:20.052 User:10.026 Sys:0.000 50.00%
 
 ```
 
-Vil tro at dette tar lengre tid fordi de to prosessene her blir tvunget til å kjøre på samme tråd, i stedet for å dele de to trådene i en CPU
+Vil tro at dette tar lengre tid fordi de to prosessene her blir tvunget til å kjøre på samme tråd, i stedet for å dele
+de to trådene i en CPU

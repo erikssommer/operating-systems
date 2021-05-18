@@ -1,42 +1,48 @@
 Uke 1
 
-1.1 
+1.1
 
-Hva er de to viktigste oppgavene til et operativsystem? 
+Hva er de to viktigste oppgavene til et operativsystem?
 
 De to viktigste oppgavene til et operativsystem er:
--	Å forenkle kommunikasjonen mellom brukeren og maskinvare, slik at applikasjoner og brukere får en enklere og mer abstrakt tilgang til en maskins ressurser. 
 
--	Å fordele ressursene en maskin til enhver tid har til rådighet, mellom ulike prosesser og brukere slik at disse ikke ødelegger for hverandre når de evt. ønsker å bruke samme ressurser. 
+- Å forenkle kommunikasjonen mellom brukeren og maskinvare, slik at applikasjoner og brukere får en enklere og mer
+  abstrakt tilgang til en maskins ressurser.
 
-Å lage en abstraksjon, dvs et grensesnitt, av hardware og administrere ressursbruken/fordelingen
-1.2 
+- Å fordele ressursene en maskin til enhver tid har til rådighet, mellom ulike prosesser og brukere slik at disse ikke
+  ødelegger for hverandre når de evt. ønsker å bruke samme ressurser.
+
+Å lage en abstraksjon, dvs et grensesnitt, av hardware og administrere ressursbruken/fordelingen 1.2
 
 I figuren i forelesningsnotatene er det to feil i output på høyre side, hva er galt?
 
-Det er feil output i OR- og NOT-portene. 
-I OR-porten er resultatet satt til 0.  Input er 1 og 0 og output skal dermed være 1. Dette er fordi OR-porten er "sann" dvs. gir 1 i output dersom et eller begge av inputene er sanne (1). Den gir 0 i output kun dersom begge inputene er usanne (0).
+Det er feil output i OR- og NOT-portene. I OR-porten er resultatet satt til 0. Input er 1 og 0 og output skal dermed
+være 1. Dette er fordi OR-porten er "sann" dvs. gir 1 i output dersom et eller begge av inputene er sanne (1). Den gir 0
+i output kun dersom begge inputene er usanne (0).
 
-NOT-porten er feil fordi den gir 0 i output når det også er 0 i input. En NOT-port vil gi sant (1) output når input er usant (0), og usant output (0) når input er sant (1). 
-
+NOT-porten er feil fordi den gir 0 i output når det også er 0 i input. En NOT-port vil gi sant (1) output når input er
+usant (0), og usant output (0) når input er sant (1).
 
 1.3
 
-Forklar ut ifra sannhetsverditabellene til AND og OR-portene hvorfor resultatet i den nederste kretsen blir 0, når øverste input er 1(rødt) og nederste input er 0(hvitt).
+Forklar ut ifra sannhetsverditabellene til AND og OR-portene hvorfor resultatet i den nederste kretsen blir 0, når
+øverste input er 1(rødt) og nederste input er 0(hvitt).
 
-Svar: 
-Slik jeg ser det må vi dele denne kretsen opp i to. Vi ser først på AND – porten, denne vil få et hvitt (0) output så lenge ett eller begge av inputene er hvite (0). I dette tilfellet er nederste input 0 (hvitt) og det er nok til at vi får et hvitt (0) resultat ut av denne porten. Så ser vi på neste port, det er en OR-port. Som nevnt over må ett eller begge inputene være røde (1) for at denne skal få rødt (1) output. Her får vi et hvitt (0) input fra AND-porten og et nytt hvitt (0) input, da vi sender inn det nederste hvite inputet også i denne porten. Hadde vi byttet om på de to inputene og latt øverste være hvitt (0) og nederste rødt (1), ville vi fått et annet resultat. Vi kan tenke oss at vi regner ut regnestykket ((A x B) +B), og setter inn 0 og 1, på de ulike plassene for A og B, de ulike resultatene finnes i sannhetstabellen som er satt opp nedenfor. 
+Svar:
+Slik jeg ser det må vi dele denne kretsen opp i to. Vi ser først på AND – porten, denne vil få et hvitt (0) output så
+lenge ett eller begge av inputene er hvite (0). I dette tilfellet er nederste input 0 (hvitt) og det er nok til at vi
+får et hvitt (0) resultat ut av denne porten. Så ser vi på neste port, det er en OR-port. Som nevnt over må ett eller
+begge inputene være røde (1) for at denne skal få rødt (1) output. Her får vi et hvitt (0) input fra AND-porten og et
+nytt hvitt (0) input, da vi sender inn det nederste hvite inputet også i denne porten. Hadde vi byttet om på de to
+inputene og latt øverste være hvitt (0) og nederste rødt (1), ville vi fått et annet resultat. Vi kan tenke oss at vi
+regner ut regnestykket ((A x B) +B), og setter inn 0 og 1, på de ulike plassene for A og B, de ulike resultatene finnes
+i sannhetstabellen som er satt opp nedenfor.
 
-A	B	F (A x B) + B
-0	0	0
-1	0	0
-0	1	1
-1	1	1
+A B F (A x B) + B 0 0 0 1 0 0 0 1 1 1 1 1
 
+Uke 2
 
-Uke 2   
-
-2.10  
+2.10
 
 ```Bash
 
@@ -103,8 +109,8 @@ $ touch ~/tmp/etc/fil2
 $ cp /etc/passwd ~/tmp
 ```
 
-
 2.11
+
 ```Bash
 s341870@studssh:/etc$ cd ../..
 
@@ -140,7 +146,9 @@ cgi-bin  fil2.java  fil4.java  mappe  nyMappe  oblig1  tmp  www
 
 s341870@studssh:~$
 ```
+
 2.13
+
 ```Bash
 s341870@studssh:~$ ls /usr/bin/b* 
 
@@ -149,7 +157,9 @@ s341870@studssh:~$ ls -la /usr/bin/b*
 ls /usr/bin | grep '^b'
 
 ```
-2.15 
+
+2.15
+
 ```Bash
 s341870@studssh:~$ touch info.sh
 
@@ -177,25 +187,31 @@ uname -a
 
 s341870@studssh:~$
 ```
-Den første måten er avhengig av at mappen "." (den du står i) er med i $PATH.
-Den andre måten forteller eksplisitt hvilket program som skal kjøres, uavhengig av @PATH.
 
+Den første måten er avhengig av at mappen "." (den du står i) er med i $PATH. Den andre måten forteller eksplisitt
+hvilket program som skal kjøres, uavhengig av @PATH.
 
 2.16
 
-Top er en kommando som viser fortløpende prosesser som står og kjører. Den øverste og første delen viser en oversikt over totalverdiene. Den nederste delen viser en tabell med hvert individuelle kommando og info. Jeg vil si feltene med hvor mye minne som blir brukt og hvor mye cpu-kraft som blir brukt er de viktigste. Hvem som gjør hva, kan også være greit å vite. Ved å taste 1 får du opp alle de ulike cpu-ene.
+Top er en kommando som viser fortløpende prosesser som står og kjører. Den øverste og første delen viser en oversikt
+over totalverdiene. Den nederste delen viser en tabell med hvert individuelle kommando og info. Jeg vil si feltene med
+hvor mye minne som blir brukt og hvor mye cpu-kraft som blir brukt er de viktigste. Hvem som gjør hva, kan også være
+greit å vite. Ved å taste 1 får du opp alle de ulike cpu-ene.
 
-top er delt inn i to deler. Den ene delen viser systeminformasjon, mens den andre delen viser hovedsaklig prosesser. Hvilke interessante felt man velger er opp til en selv, men minne og cpu-bruk er vanligvis viktigst. Ved å taste 1 får man se detaljer for hver CPU.
+top er delt inn i to deler. Den ene delen viser systeminformasjon, mens den andre delen viser hovedsaklig prosesser.
+Hvilke interessante felt man velger er opp til en selv, men minne og cpu-bruk er vanligvis viktigst. Ved å taste 1 får
+man se detaljer for hver CPU.
 
-2.17 
+2.17
 
-Når du taster "U" og legger inn eget brukernavn, får du en oversikt over prosesser som er tilknyttet din bruker. Dette kan være nyttig hvis du opplever problemer med noen av prosessene. 
+Når du taster "U" og legger inn eget brukernavn, får du en oversikt over prosesser som er tilknyttet din bruker. Dette
+kan være nyttig hvis du opplever problemer med noen av prosessene.
 
 2.18
 
-Kommando "ps aux" gir en oversikt over alle prosesser som blir kjørt i systemet uansett hvilken bruker. 
+Kommando "ps aux" gir en oversikt over alle prosesser som blir kjørt i systemet uansett hvilken bruker.
 
-2.19 
+2.19
 
 Ved å kjøre kommandoen ps aux | grep s338850, får jeg en oversikt over prosessene min bruker er en del av.
 
@@ -227,7 +243,9 @@ s341870  29477  0.0  0.0  25284  5796 pts/19   Ss   12:58   0:00 -bash
 s341870@studssh:~$
 
 ```
+
 Nytt script som utfører denne kommandoen:
+
 ```Bash
 s341870@studssh:~$ cat psuser.sh
 
@@ -258,7 +276,8 @@ s341870  29477  0.0  0.0  25284  5796 pts/19   Ss   12:58   0:00 -bash
 s341870@studssh:~$
 ```
 
-2.20 
+2.20
+
 ```Bash
 s341870@studssh:~$ nano psuser.sh
 
@@ -288,35 +307,27 @@ s341870  29477  0.0  0.0  25300  5812 pts/19   Ss   12:58   0:00 -bash
 ```
 
 2.23
-                              
 
-2.24 
+2.24
 
 Sannhetstabell for binæraddisjon.
 
-X	Y	z	c	S
-0	0	0	0	0
-0	0	1	0	1
-0	1	0	0	1
-0	1	1	1	0
-1	0	0	0	1
-1	0	1	1	0
-1	1	0	1	0
-1	1	1	1	1
+X Y z c S 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 0 1 1 1 0 1 0 0 0 1 1 0 1 1 0 1 1 0 1 0 1 1 1 1 1
 
-2.25 
-	
+2.25
+
 Ved hjelp av FullAdder.dwm verifiseres sannhetstabellen.
 
 Uke 3 Oppgaver
 
-3.2
-Absolut Path:
+3.2 Absolut Path:
+
 ```Bash
 s341870@studssh:~$ cd /usr/bin
 ```
+
 3.3
-	
+
 Relativ path:
 siden denne er relativ til mappen man står i, må man først flytte opp i root for å kunne bruke relativ path: usr/bin
 
@@ -330,7 +341,9 @@ s341870@studssh:/$ cd usr/bin
 s341870@studssh:~$ cd ../../../../usr/bin
 
 ```
+
 3.4
+
 ```Bash
 s341870@studssh:~$ diff fa.txt fb.txt
 
@@ -340,24 +353,33 @@ s341870@studssh:~$ diff fa.txt fb.txt
 ---
 > 4b
 ```
-Diff kommandoen viser oss hvilke linjer vi må gjøre noe med for at de to filene skal bli identiske. Den gir også informasjon om hva man kan gjøre. I dette tilfellet så må vi forandre (c for change) på linje 5 i fa.txt, for at den skal bli lik filen fb.txt. Vi kunne også fått beskjed om å legge til (a for add) eller fjerne (d for delete) noe.
 
+Diff kommandoen viser oss hvilke linjer vi må gjøre noe med for at de to filene skal bli identiske. Den gir også
+informasjon om hva man kan gjøre. I dette tilfellet så må vi forandre (c for change) på linje 5 i fa.txt, for at den
+skal bli lik filen fb.txt. Vi kunne også fått beskjed om å legge til (a for add) eller fjerne (d for delete) noe.
 
 3.7
 
-Det opprettes først en mappe som heter tex, så en mappe som heter oblig, deretter flyttes oblig-mappen inn i tex-mappen og blir en undermappe der. så opprettes en ny mappe med navn oblig, og tex flyttes ned i denne. Da får vi mappestrukturen som illustrert til høyre. 
+Det opprettes først en mappe som heter tex, så en mappe som heter oblig, deretter flyttes oblig-mappen inn i tex-mappen
+og blir en undermappe der. så opprettes en ny mappe med navn oblig, og tex flyttes ned i denne. Da får vi
+mappestrukturen som illustrert til høyre.
 
 3.8
 
 Ved å bruke cd-kommandoen.
+
 ```Bash
 s341870@studssh:/$ cd
 ```
-Ved å gå mappe for mappe  
+
+Ved å gå mappe for mappe
+
 ```Bash
 s341870@studssh:/$ cd ~
 ```
+
 Ved å bruke relativ path fra root.
+
 ```Bash
 s341870@studssh:/$ cd iu/cube/u0/s341870
 ```
@@ -367,6 +389,7 @@ cd $HOME
 ```
 
 3.9
+
 ```Bash
 s341870@studssh:~$ echo bla bla bla > newfile
 
@@ -376,20 +399,19 @@ bla bla bla
 
 ```
 
-Det som skjer her, er at output fra echo-kommandoen blir omdirigert inn i en fil. 
-
+Det som skjer her, er at output fra echo-kommandoen blir omdirigert inn i en fil.
 
 3.13
 
-Vi ønsker å matche det første ordet i hver linje i "ps aux" fordi det er dette som viser oss brukeren som eier prosessen.
-
+Vi ønsker å matche det første ordet i hver linje i "ps aux" fordi det er dette som viser oss brukeren som eier
+prosessen.
 
 3.14
 
-I manualen for grep står det at du kan bruke ^ og $ til å representere starten og slutten av en linje. 
-
+I manualen for grep står det at du kan bruke ^ og $ til å representere starten og slutten av en linje.
 
 3.15
+
 ```Bash
 s341870@studssh:~$ ps aux | grep ^s341870
 
@@ -407,6 +429,7 @@ s341870  24977  0.0  0.0  25216  5556 pts/53   Ss   15:45   0:00 -bash
 ```
 
 3.16
+
 ```Bash
 s341870@studssh:~$ cat psuser.sh
 
@@ -431,7 +454,9 @@ s341870  24976  0.0  0.0 144508  6024 ?        S    15:45   0:00 sshd: s341870@p
 s341870  24977  0.0  0.0  25216  5556 pts/53   Ss   15:45   0:00 -bash
 
 ```
+
 3.17
+
 ```Bash
 s341870@studssh:~/oblig1$ nano psuser 
 
@@ -442,7 +467,9 @@ s341870@studssh:~/oblig1$ cat psuser
 watch -n 10 'ps aux | grep' ^$1
 
 ```
+
 3.18
+
 ```Bash
 s341870@studssh:~$ touch hemmelig.txt
 
@@ -454,6 +481,7 @@ s341870@studssh:~$ ls -l
 ```
 
 3.19
+
 ```Bash
 s341870@studssh:~$ touch fil.txt
 
@@ -464,7 +492,9 @@ s341870@studssh:~$ ls -l
 -rwxr-xr-- 1 s338850 users 0 Feb  4 17:18 fil.txt
 
 ```
+
 3.21
+
 ```Bash
 s341870@studssh:~/mappe$ touch nyfil
 
@@ -472,7 +502,10 @@ s341870@studssh:~/mappe$ ls -l
 
 -rw-r--r-- 1 s338850 users 0 Jan 26 20:30 nyfil
 ```
-Her ser vi at rettighetene til en ny fil opprettet ved touch-kommandoen har rettigheter read/write for user, og read for group og others.
+
+Her ser vi at rettighetene til en ny fil opprettet ved touch-kommandoen har rettigheter read/write for user, og read for
+group og others.
+
 ```Bash
 s341870@studssh:~/mappe$ nano
 
@@ -480,9 +513,12 @@ s341870@studssh:~/mappe$ ls -l
 
 -rw-r--r-- 1 s338850 users 16 Jan 26 20:33 nyfil2
 ```
+
 Det same gjelder for filer opprettet direkte fra nano editor, men dette varierer fra editor til editor.
 
-Her justerer jeg umask filteret og setter default rettighetene til read/write til user, men ingen rettigheter til group og others:  
+Her justerer jeg umask filteret og setter default rettighetene til read/write til user, men ingen rettigheter til group
+og others:
+
 ```Bash
 s341870@studssh:~/mappe$ umask 0077
 
@@ -493,45 +529,56 @@ s341870@studssh:~/mappe$ ls -l fil3
 -rw------- 1 s338850 users 0 Jan 26 20:57 fil3
 
 ```
+
 3.27
 
-latch2.dwm er en D-lås. Det vil si en lagringsenhet for en bit. Den tar inn en variabel og en kontrollvariabel. A er variabelen vi sende inn og B er variabelen som bestemmer om A skal lagres i kretsen eller ikke. Hvis B = 0, spiller det ingen rolle hvilken verdi A er, fordi verdien som ligger "lagret" i kretsen er den vi vil få ut av den. Men hvis B = 1, vil vi kunne endre på verdien vi får ut helt til B skifter til 0 igjen og den nye verdien er lagret. Her vil det jo spille en rolle om du setter B verdien først eller sist. 
+latch2.dwm er en D-lås. Det vil si en lagringsenhet for en bit. Den tar inn en variabel og en kontrollvariabel. A er
+variabelen vi sende inn og B er variabelen som bestemmer om A skal lagres i kretsen eller ikke. Hvis B = 0, spiller det
+ingen rolle hvilken verdi A er, fordi verdien som ligger "lagret" i kretsen er den vi vil få ut av den. Men hvis B = 1,
+vil vi kunne endre på verdien vi får ut helt til B skifter til 0 igjen og den nye verdien er lagret. Her vil det jo
+spille en rolle om du setter B verdien først eller sist.
 
 3.28
 
 3 + 4 = 7						
 A + 1
- 
 
 3.30
 
-ALU (Arithmetic Logic Unit) finnes inne i Datapath delen av machine.dwm. Det er en aritmetisk logisk enhet som kan utføre matematiske og logiske operasjoner på data som blir sendt inn i den. ALU'en og registre utgjør til sammen Datapathen. Denne finner man inne i CPU'en (Central Processing Unit). ALU’en er CPU’ens hjerne, hvor  de aritmetiske beregningene gjøres via OR, AND og NOT-porter.
-
+ALU (Arithmetic Logic Unit) finnes inne i Datapath delen av machine.dwm. Det er en aritmetisk logisk enhet som kan
+utføre matematiske og logiske operasjoner på data som blir sendt inn i den. ALU'en og registre utgjør til sammen
+Datapathen. Denne finner man inne i CPU'en (Central Processing Unit). ALU’en er CPU’ens hjerne, hvor de aritmetiske
+beregningene gjøres via OR, AND og NOT-porter.
 
 3.31
 
-Resultatet at utregningen blir 0+1+2+3 = 6. Og dette lagres i R3. Hvis vi ser på tabellen over Assembly instruksjonene som gjennomføres ser vi at max-verdien, eller den verdien som bestemmer hvor mange ganger løkka skal kjøres gjennom, legger i R0. Tallet som i skal økes med for hver iterasjon legges i R1. I R2 lagres den variabelen vi skal legge til summen for hver iterasjon og til slutt lagres totalsummen i R3.
+Resultatet at utregningen blir 0+1+2+3 = 6. Og dette lagres i R3. Hvis vi ser på tabellen over Assembly instruksjonene
+som gjennomføres ser vi at max-verdien, eller den verdien som bestemmer hvor mange ganger løkka skal kjøres gjennom,
+legger i R0. Tallet som i skal økes med for hver iterasjon legges i R1. I R2 lagres den variabelen vi skal legge til
+summen for hver iterasjon og til slutt lagres totalsummen i R3.
 
 3.32
 
-I en von Neuman- arkitektur lagres både data og maskininstrukser i samme minne (RAM). 
+I en von Neuman- arkitektur lagres både data og maskininstrukser i samme minne (RAM).
 
-I en Harvard-arkitektur lagres data og maskininstrukser hver for seg. 
+I en Harvard-arkitektur lagres data og maskininstrukser hver for seg.
 
 machine.dwm er nærmest en Harvard arkitektur, da maskininstruksene ligger lagret for seg i ROM og ikke i RAM.
 
 3.33
-   
 
-Løkken skal kjøres to ganger --> 
+Løkken skal kjøres to ganger -->
+
 ```C
 S = 0;
 for (i = 1; i <= 2; i++)
 S = S + 2;
 ```
+
 Returnerer S = 4
 
-For å øke med 2 i løkken legger vi inn en ekstra ADD med tallet 1 i R1 på linje 6 og flytter CMP og JNE-koden en linje nedover.
+For å øke med 2 i løkken legger vi inn en ekstra ADD med tallet 1 i R1 på linje 6 og flytter CMP og JNE-koden en linje
+nedover.
 
 0: MOVI R0 <- 2
 
@@ -553,21 +600,21 @@ For å øke med 2 i løkken legger vi inn en ekstra ADD med tallet 1 i R1 på li
 
 Sluttverdier lagret:
 
-R0 : 2
-R1 : 1
-R2 : 2
-R3 : 4
+R0 : 2 R1 : 1 R2 : 2 R3 : 4
 
 UKE 4
 
 4.2
+
 ```Bash
 
 s341870@studssh:~$ hostname
 
 studssh
 ```
+
 4.4
+
 ```Bash
 s341870@studssh:~$ groups
 
@@ -575,6 +622,7 @@ users domain users all_students
 ```
 
 4.9
+
 ```Bash
 s341870@studssh:~$ grep $(whoami) /etc/passwd
 
@@ -594,9 +642,15 @@ s341870@studssh:~$ echo $DINVAR
 
 HALLO
 ```
-Når man forsøker å skrive ut minvar i det nye shellet får vi ikke noe resultat, mens når vi skriver ut DINVAR, så kommer utskriften HALLO slik vi instansierte den i det første shellet. Grunnen til at det er slik ligger i "export"-kommandoen. Den eksporterer variabelen DINVAR slik at den kan nåes fra andre shell enn det variabelen opprinnelig ble laget i. Derfor får vi helle rikke tak i minvar, den er ikke eksportert og dermed ikke tilgjengelig for andre shell enn sitt opprinnelses shell.
 
-4.11 
+Når man forsøker å skrive ut minvar i det nye shellet får vi ikke noe resultat, mens når vi skriver ut DINVAR, så kommer
+utskriften HALLO slik vi instansierte den i det første shellet. Grunnen til at det er slik ligger i "export"-kommandoen.
+Den eksporterer variabelen DINVAR slik at den kan nåes fra andre shell enn det variabelen opprinnelig ble laget i.
+Derfor får vi helle rikke tak i minvar, den er ikke eksportert og dermed ikke tilgjengelig for andre shell enn sitt
+opprinnelses shell.
+
+4.11
+
 ```Bash
 s341870@studssh:~$ ./vari.sh
 
@@ -604,6 +658,7 @@ s341870@studssh:~$ echo $min
 
 s341870@studssh:~$ echo $DIN
 ```
+
 Vi får ingen utskrift fordi variablene kun er tilgjengelige når skriptet kjøres.
 
 4.12
@@ -621,7 +676,9 @@ s341870@studssh:~$ kill 24101
 
 s341870@studssh:~$
 ```
+
 4.13
+
 ```Bash
 s341870@studssh:~$ os=`uname`
 
@@ -631,22 +688,30 @@ Linux
 
 s341870@studssh:~$ OS=$(uname)
 ```
+
 4.17
+
 ```Bash
 s341870@studssh:~$ find /iu/cube/u3 -name "index.php" 2>&1 | grep -v Permission
 ```
+
 4.19
+
 ```Bash
 s341870@studssh:~$ grep -c "haugerud" /etc/group > hgroup.txt
 
 s341870@studssh:~$ cat hgroup.txt
 12
 ```
+
 4.20
+
 ```Bash
 s341870@studssh:~$ ps aux | awk '{print $1}' | sort | uniq | grep -v "USER" | wc -l
 ```
+
 4.22
+
 ```Bash
 s341870@studssh:~/oblig1$ nano usrbin.bash
 
@@ -669,9 +734,12 @@ s341870@studssh:~/oblig1$ pwd
 /iu/cube/u0/s341870/oblig1
 ```
 
-Vi ser at jeg befinner meg I samme mappe som jeg befant meg i etter at filen blir kjørt selv om vi får oppgitt i meldingen at under kjøring av scriptet er vi i /usr/bin. Grunnen til dette er at skriptet kjøres i et subshell, og kan ikke endre det overordnede skallets arbeidskatalog. Effektene går tapt når den er ferdig å kjøre.
+Vi ser at jeg befinner meg I samme mappe som jeg befant meg i etter at filen blir kjørt selv om vi får oppgitt i
+meldingen at under kjøring av scriptet er vi i /usr/bin. Grunnen til dette er at skriptet kjøres i et subshell, og kan
+ikke endre det overordnede skallets arbeidskatalog. Effektene går tapt når den er ferdig å kjøre.
 
 For å endre katalog i hovedprosessen så kan denne kommandoen brukes:
+
 ```Bash
 s341870@studssh:~/oblig1$ . usrbin.bash 
 
@@ -679,10 +747,13 @@ er i /usr/bin
 
 s341870@studssh:/usr/bin$
 ```
+
 4.26
+
 ```Bash
 s341870@studssh:~$ cat hello.c
 ```
+
 ```C
 
 #include <stdio.h>
@@ -708,9 +779,11 @@ s341870@studssh:~$ ./hello
 
 Hello World!
 ```
+
 4.27
 
--	Først kompileres sum.c:
+- Først kompileres sum.c:
+
 ```Bash
 s341870@studssh:~$ cat sum1.c
 ```
@@ -738,7 +811,8 @@ int main()
 
 ```
 
--	Så kompileres sumMain.c og as.s:
+- Så kompileres sumMain.c og as.s:
+
 ```Bash
 s341870@studssh:~$ cat sumMain.c
 ```
@@ -755,6 +829,7 @@ int main(void)
   printf("Sum = %d \n",summ);
 }
 ```
+
 ```Bash
 s341870@studssh:~$ cat as.s
 ```
@@ -784,10 +859,13 @@ s341870@studssh:~$ ./sum
 
 Sum = 6
 ```
--	Endrer på as.s for at løkken skal kjøres en ekstra gang.
+
+- Endrer på as.s for at løkken skal kjøres en ekstra gang.
+
 ```Bash
 s341870@studssh:~$ cat as.s
 ```
+
 ```Assembly
 .globl sum
 
@@ -815,5 +893,8 @@ s338850@studssh:~$ ./sum
 Sum = 10
 
 ```
-Likeheten mellom assemblykoden og maskinkoden i oppgave 31, uke 3 er at de utfører akkurat like instrukser/funksjoner. Assembly er et hakket rikere språk enn binær maskinkode - en slags “leselig” maskinkode, som gjør det enklere for oss å forstå koden enn å lese 0’er og 1’ere, evt HEX.
+
+Likeheten mellom assemblykoden og maskinkoden i oppgave 31, uke 3 er at de utfører akkurat like instrukser/funksjoner.
+Assembly er et hakket rikere språk enn binær maskinkode - en slags “leselig” maskinkode, som gjør det enklere for oss å
+forstå koden enn å lese 0’er og 1’ere, evt HEX.
 ![image](https://user-images.githubusercontent.com/56063671/115959966-36f43a80-a50f-11eb-81d2-27cbb45a6c02.png)
