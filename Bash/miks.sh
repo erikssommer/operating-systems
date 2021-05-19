@@ -29,3 +29,12 @@ if [ $navn1 = $navn2 ]; then
 else
    echo "Nanvnene er ulike"
 fi
+
+tall1=4
+tall2=4
+
+if [ $tall1 -eq $tall2 ]; then
+   echo "Tallene er like"
+else
+   echo "Tallene er ulike"
+fi
