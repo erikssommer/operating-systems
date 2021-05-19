@@ -38,3 +38,13 @@ if [ $tall1 -eq $tall2 ]; then
 else
    echo "Tallene er ulike"
 fi
+
+if [ $# -eq 1 ]; then
+   echo "Det er en parameter"
+elif [ $# -eq 0 ]; then
+   echo "Det er ingen parametere"
+elif [ $# > 1 ]; then
+   echo "Det er $# parametere"
+else
+   echo "Her er det noe galt"
+fi
