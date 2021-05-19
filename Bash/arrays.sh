@@ -22,3 +22,9 @@ navn=("Per" "Ola" "Nora" "Julie")
 for (( i = 0; i < ${#navn[@]}; i++ )); do
     echo "${navn[$i]}"
 done
+
+array=( $( seq 200 55 1000 ) )
+
+for (( i = 0; i < ${#array[@]}; i++ )); do
+   echo ${array[$i]}
+done
