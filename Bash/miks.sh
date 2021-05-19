@@ -20,3 +20,12 @@ do
       echo $i er et partall
    fi
 done
+
+navn1="Per"
+navn2="Per"
+
+if [ $navn1 = $navn2 ]; then
+   echo "Navnene er like"
+else
+   echo "Nanvnene er ulike"
+fi
