@@ -67,6 +67,24 @@ Kjør "freindlyname" og mappe port 4000 til 80
 docker container run -p 4000:80 friendlyname
 ```
 
+Stopp alle kjørende containere
+
+```Bash
+docker stop $(docker ps -aq)
+```
+
+Slett alle containere
+
+```Bash
+docker rm $(docker ps -aq)
+```
+
+Fjern alle images
+
+```Bash
+docker rmi $(docker images -q)
+```
+
 
 
 
