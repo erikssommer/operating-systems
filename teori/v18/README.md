@@ -117,23 +117,72 @@ Til slutt legges svaret fra de fire trådene sammen. For et C-program kunne para
 
 ### Oppgave 3j
 
-I dette tilfellet er det neste leddet rekken summen av de to foreg˚aende og regneoperasjonene m˚a gjøres sekvensielt
-basert p˚a de foreg˚aende resultatene. Dermed vil det ikke gi noen gevinst om man bruker flere uavhengige tr˚ader, disse
-tr˚adene m˚atte is˚afall vente p˚a hverandres resultater og beregningen ville tatt enda lenger tid enn for en enkelt
-tr˚ad (matematisk finnes det formler for summen av N tall (N(N+1)/2) og for det N’te tallet i Fibonacci-rekken, men da
+I dette tilfellet er det neste leddet rekken summen av de to foregående og regneoperasjonene må gjøres sekvensielt
+basert på de foregående resultatene. Dermed vil det ikke gi noen gevinst om man bruker flere uavhengige tråder, disse
+trådene måtte isåfall vente på hverandres resultater og beregningen ville tatt enda lenger tid enn for en enkelt
+tråd (matematisk finnes det formler for summen av N tall (N(N+1)/2) og for det N’te tallet i Fibonacci-rekken, men da
 vil man heller ikke utnytte flere CPUer).
 
 
+## Internminne
+
+### Oppgave 4a
+
+10^3 = 1_000
+
+10^6 = 1_000_000
+
+2^10 = 1_024
+
+2^20 = 1_048_576
+
+### Oppgave 4b
+
+K (kilo) = 10^3
+
+Gi (gibi) = 2^30
+
+Ki (kibi) =  2^10
+
+Mi (mebi) = 2^20
+
+G (giga) = 10^9
+
+M (mega) = 10^6
+
+### Oppgave 4c
 
 
+Registere er en del av CPUen og det kan ta ca ett nanosekund eller mindre å flytte data mellom dem. Fra cache (som er
+SRAM som registerne) kan det ta 1-5 nanosekunder (avhengig om det er L1, L2 eller L3). Fra RAM kan det ta omtrent 10
+nanosekunder eller mer. Diskaksess er svært mye langsommere og det kan ta ett millisekund eller mer (noe raskere med
+NVMe SSD)
+
+### Oppgave 4d
+
+MMU (Memory Management Unit) oversetter de logiske/virituelle adressene som CPUen bruker til fysiske RAM-adresser
+før de sendes ut på databussen for å lese fra eller skrive til RAM. MMU må implementeres i hardware fordi oversettelsen
+må skje ekstremt raskt. Ellers ville overhead bli altfor stort hvis CPUen selv skulle bruke klokkesykler til å utføre
+de nødvendige operasjonene. Da ville i praksis ta altfor lag tid siden det vanligvis er mange minneoppslag i vanlig
+kode.
 
 
+### Oppgave 4e
+
+Figuren viser prinsippet for hvordan en virituell adresse blir oversatt til en fysisk adresse av MMU. En 16-bits
+virituell adresse kommer inn og de fire første bit'ene tolkes som indeks i page-tabellen(eksempelet bruker en 4-KB
+page størrelse). De fire første bit'en = 2 og peker derfor på page-entry nr.2. Denne inneholder 110 = 6 og den fysiske
+siden ligger derfor i frame nr 6. 0010 i den innkommende addressen blir erstattet med 110 og adressen 8196 endres da
+til den utgående fysiske adressen 24580. (Offsett er 100 = 4 og 8196 = 2*4096 + 4 = 8196. Utgående blir da 6*4096 + 4
+=24580) 4096 er første byte i page 1 og adressen 6666 ligger i denne siden. Men page nr 1 peker på frame nr 1, så den
+fysiske adressen blir den samme, altså 6666.
 
 
+### Oppgave 7f
 
-
-
-
+VIrituell page nr 7 er tom og har ingen referanse til en fysisk frame. Det betyr at denne fysiske siden ikke fines i
+RAM men ligger på disk. Det ville derfor inntreffe en page fault og siden måtte hentes inn fra disk før forespørselen
+kunne oppfylles.
 
 
 
