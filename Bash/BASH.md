@@ -1,5 +1,7 @@
 # Bash
 
+### Link til bash script cheatsheet: https://devhints.io/bash
+
 ### Filtester
 
 ```Bash
