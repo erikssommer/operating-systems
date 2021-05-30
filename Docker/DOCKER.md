@@ -85,6 +85,11 @@ Fjern alle images
 docker rmi $(docker images -q)
 ```
 
+Slett alle volumes
+
+```Bash
+docker volume rm $(docker volume ls -q)
+```
 
 
 
