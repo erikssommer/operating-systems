@@ -24,6 +24,12 @@ t1 -a t2	Logisk og - sann hvis t1 OG t2 er sanne
 t1 -o t2	Logisk eller - sann hvis t1 ELLER t2 er sanne
 ```
 
+Skrive innhold til spesifikke filendelser til skjerm:
+
+```Bash
+find . -name "tid*" | xargs cat
+```
+
 ### Logiske operatorer
 
 Logisk NOT
