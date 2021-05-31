@@ -1,26 +1,52 @@
+/**
+ * C program to print all prime numbers between 1 to n
+ */
+
 #include <stdio.h>
 
-int main() {
-  int n, i, flag = 0;
-  n=89;
+int main()
+{
+    int i, j, end, isPrime; // isPrime is used as flag variable
 
-  for (i = 2; i <= n / 2; ++i) {
-    // condition for non-prime
-    if (n % i == 0) {
-      flag = 1;
-      break;
+    end = 300000;
+	
+    int counter = 0;
+    
+    /*
+    printf("All prime numbers between 1 to %d are:\n", end);
+    */
+
+    /* Find all Prime numbers between 1 to end */
+    for(i=2; i<=end; i++)
+    {
+        /* Assume that the current number is Prime */
+        isPrime = 1; 
+
+        /* Check if the current number i is prime or not */
+        for(j=2; j<=i/2; j++)
+        {
+            /*
+             * If i is divisible by any number other than 1 and self
+             * then it is not prime number
+             */
+            if(i%j==0)
+            {
+                isPrime = 0;
+                break;
+            }
+        }
+
+        /* If the number is prime then print */
+        if(isPrime==1)
+        {
+   	    /*
+            printf("%d, ", i);
+	    */
+            counter++;
+        }
     }
-  }
 
-  if (n == 1) {
-    printf("1 is neither prime nor composite.");
-  } 
-  else {
-    if (flag == 0)
-      printf("%d is a prime number.", n);
-    else
-      printf("%d is not a prime number.", n);
-  }
+    printf("Number of primes: %d ", counter);
 
-  return 0;
+    return 0;
 }
