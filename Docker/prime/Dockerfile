@@ -6,4 +6,4 @@ RUN apt install -y build-essential
 RUN apt install -y time
 RUN gcc -O prime.c
 RUN chmod 744 run.sh
-RUN ./run.sh
+CMD ["./run.sh"]
