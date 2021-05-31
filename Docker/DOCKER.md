@@ -55,6 +55,18 @@ Lage image ved å bruke mappen sin Dockerfile
 docker build -t friendlyname .
 ```
 
+Kjør container fra image i bakgrunn og gi det et navn
+
+```Bash
+docker run -d --name [container_navn] [image_navn]
+```
+
+Åpner en kjørende container i interactive bash
+
+```Bash
+docker exec -it [container-id] bash
+```
+
 Kjører nginx på port 7979 og videreført til port 80 til cotaineren
 
 ```Bash
